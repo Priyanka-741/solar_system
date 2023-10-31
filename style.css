@@ -1,0 +1,54 @@
+body{
+    background-color: rgba(250, 204, 204, 0.897);
+    font-family: cursive;
+    text-align: center;
+    background-image: url("https://w0.peakpx.com/wallpaper/344/912/HD-wallpaper-saturn-space-konstantin-yadevich-fantasy-planet-luminos-cosmos-blue.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+
+button{
+    margin-top: 15px;
+    background-color: rgb(98, 216, 200);
+   text-align: center;
+   margin-bottom: 10px;
+   font-size: 15px;
+   padding: 7px;
+   width: 100px;
+   border: 2px solid black;
+   border-radius: 15px;
+   
+}
+
+button:hover
+{
+ background-color:rgb(198, 221, 243);
+}
+
+header{
+    text-align: center;
+    padding: 0.25%;
+    margin-bottom: 20px;
+}
+
+table {
+    padding-top: 1%;
+    margin: 0 auto;
+}
+
+input {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#submit-section{
+    margin-top: 8%;
+    font-size: large;
+}
+
+table tr td{
+    padding: 3px;
+}

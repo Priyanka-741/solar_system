@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>planets Information</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>SOLAR SYSTEM</h1>
+    </header>
+ <!--Information of <h4 id="planets"></h4> -->
+    <div id="submit-section">
+    <label>Enter planet name: </label>
+    <select name="pal" id="p2">
+        <option value="Mercury">Mercury</option>
+        <option value="Venus">Venus</option>
+        <option value="Earth">Earth</option>
+        <option value="Mars">Mars</option>
+        <option value="Jupiter">Jupiter</option>
+        <option value="Saturn">Saturn</option>
+        <option value="Urans">Urans</option>
+        <option value="Neptune">Neptune</option>
+    </select>
+    <br>
+    <button id="submit">Display</button>
+    <br>
+    </div>
+    <table>
+        <tr>
+            <td style="text-align: left">The Radius is: </td>
+            <td><div id="radius"></div></td>
+       </tr>
+
+        <tr>
+            <td style="text-align: left">The Period is: </td>
+            <td><div id="period"></div></td>
+        </tr>
+
+        <tr>
+            <td style="text-align: left">The Temperature is: </td>
+            <td><div id="temperature"></div></td>
+        </tr>
+
+        <tr>
+            <td style="text-align: left">The Mass is: </td>
+            <td><div id="mass"></div></td>
+        </tr>
+    </table>
+</body>
+
+
+<script>
+    function getInfo(c){
+    const url = 'https://planets-by-api-ninjas.p.rapidapi.com/v1/planets?name='+c;
+    const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'ea9879c4c6msh94e6c67e2816234p165d26jsn0c988e4dac14',
+		'X-RapidAPI-Host': 'planets-by-api-ninjas.p.rapidapi.com'
+	}
+};
+
+fetch(url,options).then((respond=>{
+    console.log(respond.ok)
+    console.log(respond.status)
+    return respond.json()}))
+
+    .then(data=>{console.log(data)
+       // planets.innerHTML=c
+        radius.innerHTML=data[0].radius
+        period.innerHTML=data[0].period
+        temperature.innerHTML=data[0].temperature
+        mass.innerHTML=data[0].mass
+    
+    })
+
+}  
+    submit.addEventListener('click',(e)=>{
+    e.preventDefault()
+    getInfo(p2.value)
+    })
+
+</script>
+</html>
